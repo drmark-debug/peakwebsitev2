@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- pk-static-head -->
+
+
+<link rel="canonical" href="https://peakbymd.com/peptide-library.html">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<noscript><div id="pk-static"><header>PEAK BY MD Peptide Library Patient education · Not medical advice</header> <strong>Draft for physician review.</strong> Clinical content, evidence ratings, and regulatory statements in this version have not yet been approved for publication. <main>Patient Education <h1>Peptides we offer</h1> <p>What each therapy is, what the research shows, and what we don’t yet know, so you can make an informed decision with your provider.</p> Category Goal 0 therapies <section><h2>How we approach peptide safety</h2> <p>At Peak By MD, we believe that promising science should be approached with curiosity, clinical judgment, and transparency.</p> <p>Before recommending a therapy, we review your medical history, medications, treatment goals, and relevant health markers. When appropriate, we use laboratory testing and objective assessments to better understand your baseline health.</p> <p>Not all peptides have the same level of clinical evidence. Some medications are supported by extensive human research, while others remain experimental with limited information about long-term safety. Careful supervision helps us recognize problems early, but it does not remove the uncertainty that comes with investigational therapies.</p> <p>Our goal is to help you understand the potential benefits, limitations, and risks so that treatment decisions are informed and individualized.</p></section> <section><h2>How we rate evidence</h2> <p>Ratings apply to the specific product and use described. Combination products are rated as a whole formulation, separately from their individual ingredients. FDA approval for one condition does not mean a therapy is proven for other uses.</p> <h3>Safety designations</h3></section></main> <footer>This library is for educational purposes only and does not replace an individualized medical evaluation. It does not guarantee any particular clinical benefit. Peak by MD · 95 Coles St, Jersey City, NJ 07302 · (973) 500-2524</footer></div></noscript>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="_ds/peak-by-md-design-system-12136d90-d62c-4bea-bf4f-6737f48c5221/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/peak-by-md-design-system-12136d90-d62c-4bea-bf4f-6737f48c5221/styles.css">
+<script src="_ds/peak-by-md-design-system-12136d90-d62c-4bea-bf4f-6737f48c5221/_ds_bundle.js"></script>
+  <script src="./a11y.js"></script>
+<script src="./peptides-data.js"></script>
+<script src="./peptides-clinical.js"></script>
+<style>body{margin:0;background:var(--pk-color-bg)} a{color:var(--pk-slate-blue)} a:hover{color:var(--pk-midnight-blue)}
+    /* pk-link-hover */
+    a:not(:has(img, image-slot, x-import, div, button)), a:not(:has(img, image-slot, x-import, div, button)) span, header button:not(.pk-btn), nav button:not(.pk-btn) { transition: color 0.2s ease; }
+    a:not(:has(img, image-slot, x-import, div, button)):hover, a:not(:has(img, image-slot, x-import, div, button)):hover span, header button:not(.pk-btn):hover, header button:not(.pk-btn):hover span, nav button:not(.pk-btn):hover, nav button:not(.pk-btn):hover span, [role="menu"] button:not(.pk-btn):hover, [role="menu"] a:hover { color: color-mix(in oklch, var(--pk-pumpkin), black 22%) !important; }
+  </style>
+</helmet>
+<div style="min-height:100vh;font-family:var(--pk-font-body);color:var(--pk-color-text);background:var(--pk-color-bg)">
+
+<header style="border-bottom:1px solid var(--pk-color-border);background:var(--pk-color-surface)">
+<div style="max-width:1120px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+<div style="display:flex;align-items:baseline;gap:12px;cursor:pointer" onClick="{{ goHome }}" onKeyDown="{{ goHomeKey }}" role="link" tabIndex="0" aria-label="Peptide library home">
+<span style="font-family:var(--pk-font-display);font-size:22px;color:var(--pk-midnight-blue);letter-spacing:0.02em;white-space:nowrap">PEAK BY MD</span>
+<span style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--pk-slate-blue);white-space:nowrap">Peptide Library</span>
+</div>
+<span style="font-size:13px;color:var(--pk-color-text-muted)">Patient education · Not medical advice</span>
+</div>
+</header>
+
+<sc-if value="{{ showReviewBanner }}" hint-placeholder-val="{{ true }}">
+<div style="background:var(--pk-wheat);color:var(--pk-midnight-blue)"><div style="max-width:1120px;margin:0 auto;padding:10px 24px;font-size:13.5px;line-height:1.5"><strong>Draft for physician review.</strong> Clinical content, evidence ratings, and regulatory statements in this version have not yet been approved for publication.</div></div>
+</sc-if>
+<sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+<main style="max-width:1120px;margin:0 auto;padding:48px 24px 80px">
+<div style="max-width:720px;margin-bottom:32px">
+<div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--pk-slate-blue);margin-bottom:10px">Patient Education</div>
+<h1 style="font-family:var(--pk-font-display);font-size:clamp(32px,5vw,46px);line-height:1.08;color:var(--pk-midnight-blue);margin:0 0 14px">Peptides we offer</h1>
+<p style="font-family:var(--pk-font-serif);font-size:19px;line-height:1.5;color:var(--pk-color-text-muted);margin:0;text-wrap:pretty">What each therapy is, what the research shows, and what we don’t yet know, so you can make an informed decision with your provider.</p>
+</div>
+
+<div style="display:grid;gap:18px;padding:22px;border:1px solid var(--pk-color-border);border-radius:var(--pk-radius-lg);background:var(--pk-color-surface);margin-bottom:28px">
+<x-import component-from-global-scope="PeakDS.Field" label="Search by name" placeholder="e.g. BPC-157, NAD+, sermorelin" value="{{ query }}" onChange="{{ onQuery }}" hint-size="100%,64px"></x-import>
+<div style="display:grid;gap:8px">
+<div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pk-color-text-muted)">Category</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ catChips }}" as="c" hint-placeholder-count="8">
+<button onClick="{{ c.onClick }}" style="white-space:nowrap;flex-shrink:0;font-family:var(--pk-font-body);font-size:14px;padding:8px 14px;border-radius:var(--pk-radius-pill);border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.fg }};cursor:pointer;min-height:38px">{{ c.label }}</button>
+</sc-for>
+</div>
+</div>
+<div style="display:grid;gap:8px">
+<div style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pk-color-text-muted)">Goal</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{ goalChips }}" as="c" hint-placeholder-count="12">
+<button onClick="{{ c.onClick }}" style="white-space:nowrap;flex-shrink:0;font-family:var(--pk-font-body);font-size:14px;padding:8px 14px;border-radius:var(--pk-radius-pill);border:1px solid {{ c.border }};background:{{ c.bg }};color:{{ c.fg }};cursor:pointer;min-height:38px">{{ c.label }}</button>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px">
+<div style="font-size:14px;color:var(--pk-color-text-muted)">{{ countLabel }}</div>
+<sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ clearFilters }}" style="font-family:var(--pk-font-body);font-size:14px;font-weight:600;background:none;border:none;color:var(--pk-slate-blue);cursor:pointer;padding:6px 0;text-decoration:underline">Clear filters</button>
+</sc-if>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:18px">
+<sc-for list="{{ items }}" as="item" hint-placeholder-count="6">
+<x-import component-from-global-scope="PeakDS.Card" interactive="{{ true }}" elevation="outlined" onClick="{{ item.open }}" hint-size="100%,240px">
+<div style="cursor:pointer;display:flex;flex-direction:column;gap:12px;padding:22px;height:100%;box-sizing:border-box">
+<div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--pk-slate-blue)">{{ item.cat }}</div>
+<div>
+<div style="font-family:var(--pk-font-display);font-size:22px;line-height:1.15;color:var(--pk-midnight-blue)">{{ item.name }}</div>
+<div style="font-size:13px;color:var(--pk-color-text-muted);margin-top:3px">{{ item.aka }}</div>
+</div>
+<p style="margin:0;font-size:14.5px;line-height:1.55;flex:1;text-wrap:pretty">{{ item.summary }}</p>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--pk-color-border)">
+<span style="font-size:13px;color:var(--pk-color-text-muted);white-space:nowrap">{{ item.route }}</span>
+<sc-if value="{{ showEvidence }}" hint-placeholder-val="{{ true }}">
+<span style="display:flex;align-items:center;gap:6px" title="{{ item.evDesc }}">
+<span style="display:flex;gap:3px">
+<sc-for list="{{ item.bars }}" as="b" hint-placeholder-count="5"><span style="width:14px;height:6px;border-radius:2px;background:{{ b.bg }}"></span></sc-for>
+</span>
+<span style="font-size:12px;font-weight:600;color:var(--pk-midnight-blue)">{{ item.evShort }}</span>
+</span>
+</sc-if>
+</div>
+</div>
+</x-import>
+</sc-for>
+</div>
+
+<sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+<div style="padding:48px 0;text-align:center;color:var(--pk-color-text-muted)">No peptides match those filters.</div>
+</sc-if>
+
+<section id="safety" style="margin-top:56px;padding:28px;background:var(--pk-pale-blue);border-radius:var(--pk-radius-lg)">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:0 0 12px">How we approach peptide safety</h2>
+<div style="display:grid;gap:12px;max-width:760px;font-size:16px;line-height:1.65">
+<p style="margin:0;text-wrap:pretty">At Peak By MD, we believe that promising science should be approached with curiosity, clinical judgment, and transparency.</p>
+<p style="margin:0;text-wrap:pretty">Before recommending a therapy, we review your medical history, medications, treatment goals, and relevant health markers. When appropriate, we use laboratory testing and objective assessments to better understand your baseline health.</p>
+<p style="margin:0;text-wrap:pretty">Not all peptides have the same level of clinical evidence. Some medications are supported by extensive human research, while others remain experimental with limited information about long-term safety. Careful supervision helps us recognize problems early, but it does not remove the uncertainty that comes with investigational therapies.</p>
+<p style="margin:0;text-wrap:pretty">Our goal is to help you understand the potential benefits, limitations, and risks so that treatment decisions are informed and individualized.</p>
+</div>
+</section>
+<sc-if value="{{ showEvidence }}" hint-placeholder-val="{{ true }}">
+<section style="margin-top:48px;padding-top:32px;border-top:1px solid var(--pk-color-border)">
+<h2 style="font-family:var(--pk-font-serif);font-size:22px;font-weight:600;color:var(--pk-midnight-blue);margin:0 0 16px">How we rate evidence</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:20px">
+<sc-for list="{{ legend }}" as="l" hint-placeholder-count="5">
+<div style="display:grid;gap:8px;align-content:start">
+<span style="display:flex;gap:3px"><sc-for list="{{ l.bars }}" as="b" hint-placeholder-count="5"><span style="width:14px;height:6px;border-radius:2px;background:{{ b.bg }}"></span></sc-for></span>
+<span style="font-size:14px;font-weight:700;color:var(--pk-midnight-blue)">{{ l.label }}</span>
+<span style="font-size:14px;line-height:1.5;color:var(--pk-color-text-muted)">{{ l.desc }}</span>
+</div>
+</sc-for>
+</div>
+<p style="margin:20px 0 0;font-size:14px;line-height:1.55;color:var(--pk-color-text-muted);max-width:760px;text-wrap:pretty">Ratings apply to the specific product and use described. Combination products are rated as a whole formulation, separately from their individual ingredients. FDA approval for one condition does not mean a therapy is proven for other uses.</p>
+<h3 style="font-family:var(--pk-font-serif);font-size:19px;font-weight:600;color:var(--pk-midnight-blue);margin:28px 0 10px">Safety designations</h3>
+<ul style="margin:0;padding-left:20px;font-size:14.5px;line-height:1.6;display:grid;gap:4px"><sc-for list="{{ safetyLegend }}" as="s" hint-placeholder-count="3"><li>{{ s }}</li></sc-for></ul>
+</section>
+</sc-if>
+</main>
+</sc-if>
+
+<sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+<main style="max-width:780px;margin:0 auto;padding:32px 24px 96px">
+<button onClick="{{ goHome }}" style="white-space:nowrap;font-family:var(--pk-font-body);font-size:14px;font-weight:600;background:none;border:none;color:var(--pk-slate-blue);cursor:pointer;padding:8px 0;margin-bottom:24px;min-height:44px">← All peptides</button>
+
+<div style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--pk-slate-blue);margin-bottom:8px">{{ p.cat }}</div>
+<h1 style="font-family:var(--pk-font-display);font-size:clamp(32px,5vw,44px);line-height:1.08;color:var(--pk-midnight-blue);margin:0 0 6px">{{ p.name }}</h1>
+<div style="font-size:15px;color:var(--pk-color-text-muted);margin-bottom:18px">{{ p.aka }}</div>
+<p style="font-family:var(--pk-font-serif);font-size:20px;line-height:1.45;color:var(--pk-color-text);margin:0 0 24px;text-wrap:pretty">{{ p.summary }}</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:1px;background:var(--pk-color-border);border:1px solid var(--pk-color-border);border-radius:var(--pk-radius-md);overflow:hidden;margin-bottom:12px">
+<sc-if value="{{ showEvidence }}" hint-placeholder-val="{{ true }}">
+<div style="background:var(--pk-color-surface);padding:14px 16px">
+<div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--pk-color-text-muted);margin-bottom:6px">Evidence</div>
+<span style="display:flex;gap:3px;margin-bottom:6px"><sc-for list="{{ p.bars }}" as="b" hint-placeholder-count="5"><span style="width:16px;height:7px;border-radius:2px;background:{{ b.bg }}"></span></sc-for></span>
+<div style="font-weight:600;color:var(--pk-midnight-blue);line-height:1.35">{{ p.evLabel }}</div>
+<sc-if value="{{ p.hasEvFor }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;line-height:1.45;color:var(--pk-color-text-muted);margin-top:4px">For: {{ p.evFor }}</div></sc-if>
+</div>
+</sc-if>
+<div style="background:var(--pk-color-surface);padding:14px 16px">
+<div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--pk-color-text-muted);margin-bottom:6px">Safety</div>
+<div style="font-weight:600;color:var(--pk-midnight-blue);line-height:1.35">{{ p.safetyLabel }}</div>
+</div>
+<div style="background:var(--pk-color-surface);padding:14px 16px">
+<div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--pk-color-text-muted);margin-bottom:6px">Regulatory</div>
+<div style="font-weight:600;color:var(--pk-midnight-blue);line-height:1.35">{{ p.regLabel }}</div>
+</div>
+<div style="background:var(--pk-color-surface);padding:14px 16px">
+<div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--pk-color-text-muted);margin-bottom:6px">Route</div>
+<div style="font-weight:600;color:var(--pk-midnight-blue);line-height:1.35">{{ p.route }}</div>
+</div>
+</div>
+<sc-if value="{{ p.hasIngredients }}" hint-placeholder-val="{{ false }}"><p style="margin:0 0 12px;font-size:14px;line-height:1.5;color:var(--pk-color-text-muted);text-wrap:pretty">{{ p.ingredients }}</p></sc-if>
+
+<nav style="display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px">
+<sc-for list="{{ toc }}" as="t" hint-placeholder-count="7">
+<a href="{{ t.href }}" onClick="{{ t.onClick }}" style="white-space:nowrap;flex-shrink:0;display:inline-block;font-size:13px;padding:6px 12px;border-radius:var(--pk-radius-pill);border:1px solid var(--pk-color-border);color:var(--pk-slate-blue);text-decoration:none">{{ t.label }}</a>
+</sc-for>
+</nav>
+
+<div style="font-size:16px;line-height:1.7">
+<section id="sec-what">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:40px 0 8px">What is {{ p.name }}?</h2>
+<sc-for list="{{ p.what }}" as="para" hint-placeholder-count="1"><p style="margin:0 0 14px;text-wrap:pretty">{{ para }}</p></sc-for>
+<div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px;margin-top:18px">How it may work</div>
+<div style="display:grid;gap:12px">
+<sc-for list="{{ p.mech }}" as="m" hint-placeholder-count="3">
+<div style="padding-left:16px;border-left:2px solid var(--pk-pale-blue)"><span style="font-weight:700;color:var(--pk-midnight-blue)">{{ m.t }}.</span> {{ m.d }}</div>
+</sc-for>
+</div>
+<p style="margin:12px 0 0;font-size:14.5px;font-style:italic;color:var(--pk-color-text-muted)">Mechanisms describe how a therapy may act. They are not proof of clinical benefit.</p>
+</section>
+
+<section id="sec-benefits">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:40px 0 8px">Potential benefits</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px;margin-top:12px">
+<div style="padding:18px 20px;border:1px solid var(--pk-color-border);border-radius:var(--pk-radius-md);background:var(--pk-color-surface)">
+<div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px">Supported by human research</div>
+<sc-if value="{{ p.hasHuman }}" hint-placeholder-val="{{ true }}"><ul style="margin:0;padding-left:18px;display:grid;gap:6px"><sc-for list="{{ p.human }}" as="s" hint-placeholder-count="2"><li style="text-wrap:pretty">{{ s }}</li></sc-for></ul></sc-if>
+<sc-if value="{{ p.noHuman }}" hint-placeholder-val="{{ false }}"><p style="margin:0;color:var(--pk-color-text-muted);text-wrap:pretty">{{ noHumanText }}</p></sc-if>
+</div>
+<div style="padding:18px 20px;border:1px solid var(--pk-color-border);border-radius:var(--pk-radius-md);background:var(--pk-color-surface)">
+<div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px">Areas being investigated</div>
+<ul style="margin:0 0 10px;padding-left:18px;display:grid;gap:6px"><sc-for list="{{ p.invest }}" as="s" hint-placeholder-count="3"><li>{{ s }}</li></sc-for></ul>
+<p style="margin:0;font-size:14px;color:var(--pk-color-text-muted);text-wrap:pretty">Clinical benefits for these uses have not been demonstrated.</p>
+</div>
+</div>
+</section>
+
+<section id="sec-evidence">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:40px 0 8px">Understanding the evidence</h2>
+<p style="margin:0;text-wrap:pretty">{{ p.evSummary }}</p>
+<details style="border-top:1px solid var(--pk-color-border);border-bottom:1px solid var(--pk-color-border);margin-top:16px">
+<summary style="cursor:pointer;font-weight:700;color:var(--pk-slate-blue);padding:12px 0;min-height:44px;box-sizing:border-box">Key studies ({{ p.studyCount }})</summary>
+<div style="display:grid;gap:12px;padding:4px 0 16px">
+<sc-for list="{{ p.studies }}" as="st" hint-placeholder-count="2">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px 20px;padding:16px;border-radius:var(--pk-radius-md);background:var(--pk-color-surface);border:1px solid var(--pk-color-border);font-size:14.5px;line-height:1.5">
+<div><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pk-color-text-muted)">Study type</div>{{ st.type }}</div>
+<div><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pk-color-text-muted)">Human or animal</div>{{ st.subj }}</div>
+<div><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pk-color-text-muted)">Population</div>{{ st.pop }}</div>
+<div><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pk-color-text-muted)">Primary outcome</div>{{ st.outcome }}</div>
+<div><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pk-color-text-muted)">Main finding</div>{{ st.finding }}</div>
+<div><div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pk-color-text-muted)">Key limitation</div>{{ st.limit }}</div>
+</div>
+</sc-for>
+</div>
+</details>
+<details id="sec-refs" style="border-bottom:1px solid var(--pk-color-border)">
+<summary style="cursor:pointer;font-weight:700;color:var(--pk-slate-blue);padding:12px 0;min-height:44px;box-sizing:border-box">References</summary>
+<ol style="margin:0 0 16px;padding-left:20px;font-size:13.5px;line-height:1.55;color:var(--pk-color-text-muted);display:grid;gap:6px"><sc-for list="{{ p.refLinks }}" as="r" hint-placeholder-count="2"><li>{{ r.text }} <a href="{{ r.href }}" target="_blank" rel="noopener" style="white-space:nowrap">Find on PubMed</a></li></sc-for></ol>
+</details>
+</section>
+
+<section id="sec-eval">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:40px 0 8px">What we evaluate before treatment</h2>
+<p style="margin:0 0 12px;text-wrap:pretty">Evaluation is individualized. What we review depends on the therapy, your medical history, and your goals, and not every patient needs every test. For this therapy, relevant considerations may include:</p>
+<ul style="margin:0;padding-left:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));column-gap:28px"><sc-for list="{{ p.screenList }}" as="s" hint-placeholder-count="6"><li>{{ s }}</li></sc-for></ul>
+</section>
+
+<section id="sec-use">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:40px 0 8px">How is it used?</h2>
+<p style="margin:0 0 14px;color:var(--pk-color-text-muted);text-wrap:pretty">General directions only. Your exact dose, schedule, and cycle are set by your provider and shown on your prescription label. Do not change them without guidance.</p>
+<div style="display:grid;border-top:1px solid var(--pk-color-border)">
+<sc-for list="{{ p.use }}" as="u" hint-placeholder-count="3">
+<div style="display:grid;grid-template-columns:minmax(0,140px) minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--pk-color-border)">
+<div style="font-weight:700;color:var(--pk-midnight-blue)">{{ u.t }}</div>
+<div style="text-wrap:pretty">{{ u.d }}</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="sec-side">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:40px 0 8px">Safety and considerations</h2>
+<div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px;margin-top:12px">Common side effects</div>
+<ul style="margin:0;padding-left:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));column-gap:28px;margin-bottom:16px"><sc-for list="{{ p.side }}" as="s" hint-placeholder-count="6"><li>{{ s }}</li></sc-for></ul>
+<x-import component-from-global-scope="PeakDS.Callout" tone="critical" title="Contraindications" hint-size="100%,72px">{{ p.caution }}</x-import>
+<sc-if value="{{ p.hasTips }}" hint-placeholder-val="{{ false }}"><div style="margin-top:12px"><x-import component-from-global-scope="PeakDS.Callout" tone="education" title="Tips to reduce side effects" hint-size="100%,72px"><ul style="margin:4px 0 0;padding-left:18px;display:grid;gap:4px"><sc-for list="{{ p.tips }}" as="t" hint-placeholder-count="2"><li>{{ t }}</li></sc-for></ul></x-import></div></sc-if>
+<details style="border-top:1px solid var(--pk-color-border);border-bottom:1px solid var(--pk-color-border);margin-top:16px">
+<summary style="cursor:pointer;font-weight:700;color:var(--pk-slate-blue);padding:12px 0;min-height:44px;box-sizing:border-box">More safety detail</summary>
+<div style="display:grid;gap:18px;padding:4px 0 18px">
+<div><div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px">Serious or uncommon risks</div><ul style="margin:0;padding-left:20px"><sc-for list="{{ p.serious }}" as="s" hint-placeholder-count="2"><li>{{ s }}</li></sc-for></ul></div>
+<div><div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px">Drug interactions</div><p style="margin:0;text-wrap:pretty">{{ p.interact }}</p></div>
+<div><div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px">Pregnancy and breastfeeding</div><p style="margin:0;text-wrap:pretty">{{ p.preg }}</p></div>
+<sc-if value="{{ p.hasTheory }}" hint-placeholder-val="{{ false }}"><div><div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px">Theoretical risks</div><p style="margin:0 0 6px;font-size:14.5px;color:var(--pk-color-text-muted)">Possible based on biology or animal data, but not established in people.</p><ul style="margin:0;padding-left:20px"><sc-for list="{{ p.theory }}" as="s" hint-placeholder-count="1"><li>{{ s }}</li></sc-for></ul></div></sc-if>
+<div><div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px">Long-term uncertainties</div><ul style="margin:0;padding-left:20px"><sc-for list="{{ p.unknowns }}" as="s" hint-placeholder-count="3"><li>{{ s }}</li></sc-for></ul></div>
+</div>
+</details>
+</section>
+
+<section id="sec-progress">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:40px 0 8px">How we evaluate progress</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin-top:12px">
+<div><div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px">Objective measures</div><ul style="margin:0;padding-left:20px;display:grid;gap:4px"><sc-for list="{{ p.monValid }}" as="s" hint-placeholder-count="3"><li>{{ s }}</li></sc-for></ul></div>
+<sc-if value="{{ p.hasExplore }}" hint-placeholder-val="{{ true }}"><div><div style="font-weight:700;color:var(--pk-midnight-blue);margin:0 0 6px">Subjective or exploratory measures</div><ul style="margin:0;padding-left:20px;display:grid;gap:4px"><sc-for list="{{ p.monExplore }}" as="s" hint-placeholder-count="2"><li>{{ s }}</li></sc-for></ul></div></sc-if>
+</div>
+<sc-if value="{{ p.hasMonNote }}" hint-placeholder-val="{{ false }}"><p style="margin:14px 0 0;font-size:14.5px;color:var(--pk-color-text-muted);text-wrap:pretty">{{ p.monNote }}</p></sc-if>
+</section>
+
+<section id="sec-reg">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:40px 0 8px">Regulatory status</h2>
+<div style="margin:6px 0 10px"><x-import component-from-global-scope="PeakDS.Badge" tone="{{ p.regTone }}" variant="soft" hint-size="auto,24px">{{ p.regLabel }}</x-import></div>
+<p style="margin:0;text-wrap:pretty">{{ p.reg }}</p>
+</section>
+
+<section id="sec-bottom" style="margin-top:40px;padding:28px;background:var(--pk-pale-blue);border-radius:var(--pk-radius-lg)">
+<h2 style="font-family:var(--pk-font-display);font-size:26px;color:var(--pk-midnight-blue);margin:0 0 10px">The bottom line</h2>
+<sc-for list="{{ p.bottom }}" as="para" hint-placeholder-count="1"><p style="margin:0 0 12px;text-wrap:pretty">{{ para }}</p></sc-for>
+<p style="margin:0;font-weight:600;color:var(--pk-midnight-blue)">Whether this therapy is right for you should be decided with your provider, based on your goals, history, medications, risks, and the limits of the evidence.</p>
+</section>
+
+
+</div>
+
+<div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:48px;padding-top:20px;border-top:1px solid var(--pk-color-border)">
+<sc-if value="{{ hasPrev }}" hint-placeholder-val="{{ true }}"><button onClick="{{ goPrev }}" style="font-family:var(--pk-font-body);font-size:14px;background:none;border:none;color:var(--pk-slate-blue);cursor:pointer;padding:8px 0;min-height:44px;text-align:left">← {{ prevName }}</button></sc-if>
+<span></span>
+<sc-if value="{{ hasNext }}" hint-placeholder-val="{{ true }}"><button onClick="{{ goNext }}" style="font-family:var(--pk-font-body);font-size:14px;background:none;border:none;color:var(--pk-slate-blue);cursor:pointer;padding:8px 0;min-height:44px;text-align:right">{{ nextName }} →</button></sc-if>
+</div>
+</main>
+</sc-if>
+
+<footer style="border-top:1px solid var(--pk-color-border);background:var(--pk-color-surface)">
+<div style="max-width:1120px;margin:0 auto;padding:24px;font-size:12.5px;line-height:1.6;color:var(--pk-color-text-muted)">This library is for educational purposes only and does not replace an individualized medical evaluation. It does not guarantee any particular clinical benefit. Peak by MD · 95 Coles St, Jersey City, NJ 07302 · (973) 500-2524</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showEvidence&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Display&quot;},&quot;showReviewBanner&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Display&quot;}}">
+class Component extends DCLogic {
+  state = { ready: !!(window.PEPTIDES && window.PEPTIDE_CLINICAL && window.PEPTIDE_META2), sel: null, query: "", cat: null, goal: null };
+  componentDidMount() {
+    let lead = null; try { lead = JSON.parse(localStorage.getItem("peak-peptide-lead") || "null"); } catch (e) {}
+    if (!lead) { location.replace("service.html?p=peptide-therapy&unlock=1#library"); return; }
+    const readHash = () => { const h = decodeURIComponent(location.hash.slice(1)); this.setState({ sel: h && !h.startsWith("sec-") ? h : (h.startsWith("sec-") ? this.state.sel : null) }); };
+    readHash();
+    this._onHash = readHash;
+    window.addEventListener("hashchange", readHash);
+    const ok = () => window.PEPTIDES && window.PEPTIDE_CLINICAL && window.PEPTIDE_META2 && window.PEPTIDE_USE;
+    if (!ok()) this._t = setInterval(() => { if (ok()) { clearInterval(this._t); this.setState({ ready: true }); } }, 50);
+  }
+  componentWillUnmount() { window.removeEventListener("hashchange", this._onHash); clearInterval(this._t); }
+  open(id) { history.pushState(null, "", id ? "#" + id : location.pathname + location.search); this.setState({ sel: id }); window.scrollTo(0, 0); }
+  bars(ev) { return [1, 2, 3, 4, 5].map(i => ({ bg: i <= ev ? "var(--pk-midnight-blue)" : "var(--pk-color-border)" })); }
+  chip(label, active, onClick) {
+    return { label, onClick, bg: active ? "var(--pk-midnight-blue)" : "var(--pk-color-surface)", fg: active ? "#fff" : "var(--pk-color-text)", border: active ? "var(--pk-midnight-blue)" : "var(--pk-color-border)" };
+  }
+  renderVals() {
+    const CL = window.PEPTIDE_CLINICAL || {}, data = (window.PEPTIDES || []).map(r => ({ ...r, ...(CL[r.id] || {}) })), meta = window.PEPTIDE_META || { categories: [], goals: [], evidence: {} };
+    const showReview = false, showEvidence = this.props.showEvidence ?? true, m2 = window.PEPTIDE_META2 || { evidence: {}, safety: {}, regTypes: {}, groups: {} };
+    const { query, cat, goal, sel } = this.state;
+    const q = query.trim().toLowerCase();
+    const tones = { approved: "grass", offlabel: "slate", invest: "wheat", verify: "pumpkin" };
+    const decorate = d => { const g = m2.groups[d.group] || {}, ev = m2.evidence[d.ev] || {}, screen = [...new Set([...(g.screen || []), ...(d.screen || [])])], explore = d.explore || g.explore || [], refs = d.refs || [];
+      return { ...d, hasTips: !!(d.tips && d.tips.length), use: (window.PEPTIDE_USE || {})[d.id] || [], bars: this.bars(d.ev), evLabel: ev.label, evShort: ev.short, evDesc: ev.desc,
+      hasEvFor: !!d.evFor, safetyLabel: m2.safety[d.safety] || "", regLabel: m2.regTypes[d.regType] || "", regTone: tones[d.regType] || "neutral", hasIngredients: !!d.ingredients,
+      human: d.human || [], hasHuman: !!(d.human && d.human.length), noHuman: !(d.human && d.human.length), invest: d.invest || [], studies: d.studies || [], studyCount: (d.studies || []).length,
+      refLinks: refs.map(r => ({ text: r, href: "https://pubmed.ncbi.nlm.nih.gov/?term=" + encodeURIComponent(r.replace(/\.\s*(\d{4}|[A-Z][^.]*\.\s*\d{4})\.?$/, "").split(". ").slice(1, 2).join(" ") || r) })),
+      screenList: screen, monValid: d.valid || g.valid || [], monExplore: explore, hasExplore: explore.length > 0, monNote: d.monNote || g.note || "", hasMonNote: !!(d.monNote || g.note),
+      serious: d.serious || [], hasTheory: !!(d.theory && d.theory.length), theory: d.theory || [], isDraft: showReview && d.review === "draft", open: () => this.open(d.id) }; };
+    const filtered = data.filter(d => (!cat || d.cat === cat) && (!goal || d.goals.includes(goal)) && (!q || (d.name + " " + d.aka).toLowerCase().includes(q)));
+    const idx = data.findIndex(d => d.id === sel);
+    const p = idx >= 0 ? decorate(data[idx]) : null;
+    const secs = [["sec-what", "Overview"], ["sec-benefits", "Benefits"], ["sec-evidence", "Evidence"], ["sec-eval", "Before treatment"], ["sec-use", "How it’s used"], ["sec-side", "Safety"], ["sec-progress", "Progress"], ["sec-reg", "Regulatory"], ["sec-bottom", "Bottom line"]];
+    const prev = idx > 0 ? data[idx - 1] : null, next = idx >= 0 && idx < data.length - 1 ? data[idx + 1] : null;
+    return {
+      isList: !p, isDetail: !!p, p: p || {}, showEvidence, showReviewBanner: this.props.showReviewBanner ?? true, noHumanText: m2.noHuman, safetyLegend: Object.values(m2.safety),
+      query, onQuery: e => this.setState({ query: e.target.value }),
+      catChips: [this.chip("All", !cat, () => this.setState({ cat: null }))].concat(meta.categories.map(c => this.chip(c, cat === c, () => this.setState({ cat: cat === c ? null : c })))),
+      goalChips: meta.goals.map(g => this.chip(g, goal === g, () => this.setState({ goal: goal === g ? null : g }))),
+      items: filtered.map(decorate), isEmpty: this.state.ready && filtered.length === 0,
+      countLabel: filtered.length + (filtered.length === 1 ? " therapy" : " therapies"),
+      hasFilters: !!(cat || goal || q), clearFilters: () => this.setState({ cat: null, goal: null, query: "" }),
+      legend: [5, 4, 3, 2, 1].map(e => ({ bars: this.bars(e), label: (m2.evidence[e] || {}).label, desc: (m2.evidence[e] || {}).desc })),
+      toc: secs.map(([id, label]) => ({ label, href: "#" + id, onClick: e => { e.preventDefault(); const el = document.getElementById(id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 16, behavior: "smooth" }); } })),
+      goHomeKey: e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); e.currentTarget.click(); } }, goHome: () => this.open(null),
+      hasPrev: !!prev, prevName: prev ? prev.name : "", goPrev: () => prev && this.open(prev.id),
+      hasNext: !!next, nextName: next ? next.name : "", goNext: () => next && this.open(next.id)
+    };
+  }
+}
+</script>
+</body>
+</html>

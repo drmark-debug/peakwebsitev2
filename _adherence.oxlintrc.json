@@ -1,0 +1,331 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": [
+          {
+            "element": "button",
+            "message": "Use <Button> from the design system instead of <button>."
+          }
+        ]
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/components/Badge/**",
+              "components/components/Button/**",
+              "components/components/Callout/**",
+              "components/components/Card/**",
+              "components/components/Field/**",
+              "components/components/StatCard/**",
+              "components/scenes/Login/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Nexa|Avenir|Minion Pro))/i]",
+        "message": "Font not provided by the design system. Available: Nexa, Avenir, Minion Pro."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|variant|dot|className|id|style|children|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: tone, variant, dot, className, id, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:midnight|slate|pale|wheat|lilac|grass|pumpkin|cherry|neutral)$/]",
+        "message": "<Badge> tone must be one of 'midnight' | 'slate' | 'pale' | 'wheat' | 'lilac' | 'grass' | 'pumpkin' | 'cherry' | 'neutral'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:solid|soft|outline)$/]",
+        "message": "<Badge> variant must be one of 'solid' | 'soft' | 'outline'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|block|leadingIcon|trailingIcon|className|id|style|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, block, leadingIcon, trailingIcon, className, id, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|accent|cta|ghost)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'accent' | 'cta' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Callout'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|title|icon|className|id|style|children|key|ref|className|style|children)$/]",
+        "message": "<Callout> doesn't accept that prop. Declared props: tone, title, icon, className, id, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Callout'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:info|success|warning|critical|education)$/]",
+        "message": "<Callout> tone must be one of 'info' | 'success' | 'warning' | 'critical' | 'education'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:accent|elevation|interactive|className|id|style|children|key|ref|className|style|children)$/]",
+        "message": "<Card> doesn't accept that prop. Declared props: accent, elevation, interactive, className, id, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute[name.name='accent'] > Literal[value!=/^(?:midnight|slate|pale|wheat|lilac|grass|pumpkin|cherry|none)$/]",
+        "message": "<Card> accent must be one of 'midnight' | 'slate' | 'pale' | 'wheat' | 'lilac' | 'grass' | 'pumpkin' | 'cherry' | 'none'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute[name.name='elevation'] > Literal[value!=/^(?:flat|outlined|elevated)$/]",
+        "message": "<Card> elevation must be one of 'flat' | 'outlined' | 'elevated'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Field'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|hint|error|size|leadingIcon|trailingIcon|block|className|id|style|children|key|ref|className|style|children)$/]",
+        "message": "<Field> doesn't accept that prop. Declared props: label, hint, error, size, leadingIcon, trailingIcon, block, className, id, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Field'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:md|lg)$/]",
+        "message": "<Field> size must be one of 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Login'] > JSXAttribute > JSXIdentifier[name!=/^(?:onSubmit|error|key|ref|className|style|children)$/]",
+        "message": "<Login> doesn't accept that prop. Declared props: onSubmit, error."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatCard'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|unit|delta|trend|higherIsBetter|caption|accent|className|id|style|children|key|ref|className|style|children)$/]",
+        "message": "<StatCard> doesn't accept that prop. Declared props: label, value, unit, delta, trend, higherIsBetter, caption, accent, className, id, style, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatCard'] > JSXAttribute[name.name='trend'] > Literal[value!=/^(?:flat|up|down)$/]",
+        "message": "<StatCard> trend must be one of 'flat' | 'up' | 'down'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": [
+          "button"
+        ]
+      },
+      "Callout": {
+        "replaces": []
+      },
+      "Card": {
+        "replaces": []
+      },
+      "Field": {
+        "replaces": []
+      },
+      "Login": {
+        "replaces": []
+      },
+      "StatCard": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--pk-cherry",
+      "--pk-cherry-tint",
+      "--pk-color-accent",
+      "--pk-color-bg",
+      "--pk-color-border",
+      "--pk-color-cta",
+      "--pk-color-danger",
+      "--pk-color-info",
+      "--pk-color-on-accent",
+      "--pk-color-on-cta",
+      "--pk-color-on-primary",
+      "--pk-color-primary",
+      "--pk-color-secondary",
+      "--pk-color-success",
+      "--pk-color-surface",
+      "--pk-color-surface-2",
+      "--pk-color-text",
+      "--pk-color-text-muted",
+      "--pk-color-text-subtle",
+      "--pk-color-warning",
+      "--pk-duration",
+      "--pk-ease",
+      "--pk-font-academy-body",
+      "--pk-font-academy-head",
+      "--pk-font-body",
+      "--pk-font-display",
+      "--pk-font-script",
+      "--pk-font-serif",
+      "--pk-grass",
+      "--pk-grass-tint",
+      "--pk-ink",
+      "--pk-ink-2",
+      "--pk-ink-3",
+      "--pk-leading-normal",
+      "--pk-leading-snug",
+      "--pk-leading-tight",
+      "--pk-lilac",
+      "--pk-lilac-tint",
+      "--pk-line",
+      "--pk-midnight-blue",
+      "--pk-midnight-blue-90",
+      "--pk-midnight-blue-tint",
+      "--pk-mist",
+      "--pk-pale-blue",
+      "--pk-pale-blue-tint",
+      "--pk-paper",
+      "--pk-pumpkin",
+      "--pk-pumpkin-tint",
+      "--pk-radius-lg",
+      "--pk-radius-md",
+      "--pk-radius-pill",
+      "--pk-radius-sm",
+      "--pk-shadow-lg",
+      "--pk-shadow-md",
+      "--pk-shadow-sm",
+      "--pk-slate-blue",
+      "--pk-slate-blue-tint",
+      "--pk-space-1",
+      "--pk-space-2",
+      "--pk-space-3",
+      "--pk-space-4",
+      "--pk-space-5",
+      "--pk-space-6",
+      "--pk-space-7",
+      "--pk-space-8",
+      "--pk-text-2xl",
+      "--pk-text-3xl",
+      "--pk-text-4xl",
+      "--pk-text-5xl",
+      "--pk-text-base",
+      "--pk-text-lg",
+      "--pk-text-sm",
+      "--pk-text-xl",
+      "--pk-text-xs",
+      "--pk-tracking-caps",
+      "--pk-tracking-tight",
+      "--pk-tracking-wide",
+      "--pk-weight-heavy",
+      "--pk-weight-light",
+      "--pk-weight-medium",
+      "--pk-weight-regular",
+      "--pk-wheat",
+      "--pk-wheat-tint",
+      "--pk-white"
+    ],
+    "tokenKinds": {
+      "--pk-midnight-blue": "color",
+      "--pk-slate-blue": "color",
+      "--pk-pale-blue": "color",
+      "--pk-wheat": "color",
+      "--pk-lilac": "color",
+      "--pk-grass": "color",
+      "--pk-pumpkin": "color",
+      "--pk-cherry": "color",
+      "--pk-midnight-blue-90": "color",
+      "--pk-midnight-blue-tint": "color",
+      "--pk-slate-blue-tint": "color",
+      "--pk-pale-blue-tint": "color",
+      "--pk-wheat-tint": "color",
+      "--pk-grass-tint": "color",
+      "--pk-pumpkin-tint": "color",
+      "--pk-cherry-tint": "color",
+      "--pk-lilac-tint": "color",
+      "--pk-white": "color",
+      "--pk-paper": "color",
+      "--pk-mist": "color",
+      "--pk-line": "color",
+      "--pk-ink": "color",
+      "--pk-ink-2": "color",
+      "--pk-ink-3": "color",
+      "--pk-color-bg": "color",
+      "--pk-color-surface": "color",
+      "--pk-color-surface-2": "color",
+      "--pk-color-border": "color",
+      "--pk-color-text": "font",
+      "--pk-color-text-muted": "font",
+      "--pk-color-text-subtle": "font",
+      "--pk-color-primary": "color",
+      "--pk-color-secondary": "color",
+      "--pk-color-accent": "color",
+      "--pk-color-cta": "color",
+      "--pk-color-on-primary": "color",
+      "--pk-color-on-accent": "color",
+      "--pk-color-on-cta": "color",
+      "--pk-color-success": "color",
+      "--pk-color-danger": "color",
+      "--pk-color-warning": "color",
+      "--pk-color-info": "color",
+      "--pk-font-display": "font",
+      "--pk-font-body": "font",
+      "--pk-font-serif": "font",
+      "--pk-font-script": "font",
+      "--pk-font-academy-head": "font",
+      "--pk-font-academy-body": "font",
+      "--pk-weight-light": "font",
+      "--pk-weight-regular": "font",
+      "--pk-weight-medium": "font",
+      "--pk-weight-heavy": "font",
+      "--pk-text-xs": "font",
+      "--pk-text-sm": "font",
+      "--pk-text-base": "font",
+      "--pk-text-lg": "font",
+      "--pk-text-xl": "font",
+      "--pk-text-2xl": "font",
+      "--pk-text-3xl": "font",
+      "--pk-text-4xl": "font",
+      "--pk-text-5xl": "font",
+      "--pk-leading-tight": "font",
+      "--pk-leading-snug": "font",
+      "--pk-leading-normal": "font",
+      "--pk-tracking-tight": "font",
+      "--pk-tracking-wide": "font",
+      "--pk-tracking-caps": "font",
+      "--pk-space-1": "spacing",
+      "--pk-space-2": "spacing",
+      "--pk-space-3": "spacing",
+      "--pk-space-4": "spacing",
+      "--pk-space-5": "spacing",
+      "--pk-space-6": "spacing",
+      "--pk-space-7": "spacing",
+      "--pk-space-8": "spacing",
+      "--pk-radius-sm": "radius",
+      "--pk-radius-md": "radius",
+      "--pk-radius-lg": "radius",
+      "--pk-radius-pill": "radius",
+      "--pk-shadow-sm": "shadow",
+      "--pk-shadow-md": "shadow",
+      "--pk-shadow-lg": "shadow",
+      "--pk-duration": "other",
+      "--pk-ease": "other"
+    },
+    "fontFamilies": [
+      "Avenir",
+      "Minion Pro",
+      "Nexa"
+    ]
+  }
+}
